@@ -146,6 +146,17 @@ body {
   font-size: 18px;
 }
 
+.about-project {
+  background-color: var(--main-dark-color);
+  padding: 20px 0px;
+  line-height: 1.5;
+  color: var(--main-light-color);
+}
+
+.about-project__link {
+  color: var(--bright-color);
+}
+
 .hide {
   display: none;
 }
