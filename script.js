@@ -61,10 +61,11 @@ function closeModal() {
   modal.removeEventListener('click', closeModal);
 }
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.popular-direction', {
+  fade: true,
   breakpoints: {
-    460: {
-      slidesPerView: 1.25,
+    320: {
+      slidesPerView: 1.2,
       spaceBetween: 5,
     },
     560: {
