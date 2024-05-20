@@ -230,9 +230,6 @@ body {
   display: none;
 }
 
-.mobile-menu-icon {
-}
-
 .mobile-menu-wrapper {
   position: fixed;
   width: 100%;
@@ -240,6 +237,16 @@ body {
   background-color: #1a3e3e;
   top: 0px;
   left: 0px;
+  padding-top: 50px;
+}
+
+.btn-close-menu {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
 }
 
 .btn {
@@ -287,8 +294,8 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  main-heading {
-    font-size: 1.75em;
+  .main-heading {
+    font-size: 1.5em;
   }
 }
 
@@ -668,6 +675,7 @@ body {
   .nav-list__item {
     position: relative;
     padding-left: 20px;
+    line-height: 18px;
   }
 
   .direction-desc__text {

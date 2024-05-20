@@ -4,18 +4,19 @@ let btnsOpen = document.querySelectorAll('.btn-open-modal');
 let btnClose = document.querySelector('.btn-close-modal');
 let modal = document.querySelector('.popup');
 let modalContent = document.querySelector('.popup-content');
+let modalContentHTML;
 
 let mobileMenuIcon = document.querySelector('.mobile-menu-icon');
 let mainMenu = document.querySelector('.nav-list');
 let mobileMenu = document.querySelector('.mobile-menu');
 let mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
-let modalContentHTML;
+let btnCloseMenu = document.querySelector('.btn-close-menu');
 
 mobileMenuIcon.addEventListener('click', function (event) {
-  console.log(mainMenu);
   mobileMenuWrapper.classList.remove('hide');
   mainMenu.classList.add('nav-list--mobile');
   mobileMenuWrapper.prepend(mainMenu);
+  btnCloseMenu.addEventListener('click', closeMobileMenu);
 });
 
 for (let btnOpen of btnsOpen) {
@@ -58,7 +59,12 @@ function handleOutside(event) {
 function closeModal() {
   modal.classList.toggle('hide');
   modal.removeEventListener('click', handleOutside);
-  modal.removeEventListener('click', closeModal);
+  btnClose.removeEventListener('click', closeModal);
+}
+
+function closeMobileMenu() {
+  mobileMenuWrapper.classList.toggle('hide');
+  btnCloseMenu.removeEventListener('click', btnCloseMenu.closeMobileMenu);
 }
 
 const swiper = new Swiper('.popular-direction', {
