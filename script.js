@@ -33,7 +33,7 @@ function createModalcontent(btn) {
   let btnType = btn.getAttribute('data-type-content');
   if (btnType == 'form') {
     console.log('form');
-    modalContentHTML = `<h2 class="form__heading">Заказать консультацию</h2> <form class="form-consultation form"> <input type="text" class="form-name form-input" placeholder="Ваше имя"/> <input type="tel" class="form-tel form-input" placeholder="Ваш телефон" /> <button class="btn btn-dark btn-form-consultation" type="button"> Отправить </button> </form>`;
+    modalContentHTML = `<h2 class="form__heading">Заказать консультацию</h2> <form class="form-consultation form"> <input type="text" class="form-name form-input" placeholder="Ваше имя"/> <input type="tel" class="form-tel form-input" placeholder="Ваш телефон" /> <button class="btn btn--dark btn-form-consultation" type="button"> Отправить </button> </form>`;
     modalContent.innerHTML = modalContentHTML;
   }
 
@@ -67,7 +67,7 @@ function closeMobileMenu() {
   btnCloseMenu.removeEventListener('click', btnCloseMenu.closeMobileMenu);
 }
 
-const swiper = new Swiper('.popular-direction', {
+const swiperDirection = new Swiper('.popular-direction-slider', {
   fade: true,
   breakpoints: {
     320: {
@@ -84,3 +84,35 @@ const swiper = new Swiper('.popular-direction', {
     },
   },
 });
+
+if (window.innerWidth <= 1024) {
+  let blogSlider = document.querySelector('.blog-slider');
+  blogSlider.classList.add('swiper');
+
+  let blogWripper = document.querySelector('.blog-wrapper');
+  blogWripper.classList.add('swiper-wrapper');
+
+  let blogSliderItems = document.querySelectorAll('.blog-item');
+
+  for (let blogSliderItem of blogSliderItems) {
+    blogSliderItem.classList.add('swiper-slide');
+  }
+
+  const swiperBlog = new Swiper('.blog-slider', {
+    fade: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1.2,
+        spaceBetween: 5,
+      },
+      560: {
+        slidesPerView: 2.5,
+        spaceBetween: 5,
+      },
+      990: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+}

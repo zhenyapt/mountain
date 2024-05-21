@@ -19,19 +19,31 @@
     />
   </head>
   <body>
-
     <div class="about-project">
       <div class="wrapper">
-        <p class="about-project__text">тестовая верстка главной страницы многостраничного сайта, назначение проекта - практика навыков верстки и написания js-скриптов</p>
-        <p class="about-project__text">по макету - 
-          <a rel="nofollow"
-           href="https://www.figma.com/design/NrPZZU8u1sLytOicIHcIAx/%D0%A0%D1%83%D0%BC%D0%A2%D0%B8%D0%B1%D0%B5%D1%82?node-id=1-9&t=lEwrmlnguMcIrtyP-0" class="about-project__link">
-           Румтибет</a>, автор макета 
-          <a rel="nofollow" href="https://avanesov.pro/portfolio/rumtibet/" class="about-project__link">
-            https://avanesov.pro/portfolio/rumtibet/</a>
-        + реализация попапов с формами, видео   
-      </p>
-      </div>   
+        <p class="about-project__text">
+          тестовая верстка главной страницы многостраничного сайта, назначение
+          проекта - практика навыков верстки и написания js-скриптов
+        </p>
+        <p class="about-project__text">
+          по макету -
+          <a
+            rel="nofollow"
+            href="https://www.figma.com/design/NrPZZU8u1sLytOicIHcIAx/%D0%A0%D1%83%D0%BC%D0%A2%D0%B8%D0%B1%D0%B5%D1%82?node-id=1-9&t=lEwrmlnguMcIrtyP-0"
+            class="about-project__link"
+          >
+            Румтибет</a
+          >, автор макета
+          <a
+            rel="nofollow"
+            href="https://avanesov.pro/portfolio/rumtibet/"
+            class="about-project__link"
+          >
+            https://avanesov.pro/portfolio/rumtibet/</a
+          >
+          + реализация попапов с формами, видео
+        </p>
+      </div>
     </div>
     <header class="header header-main-page">
       <div class="wrapper header-wrapper">
@@ -62,7 +74,7 @@
             </ul>
           </nav>
           <button
-            class="btn btn-dark btn-open-modal btn-header"
+            class="btn btn--dark btn-open-modal btn-header"
             type="button"
             data-type-content="form"
           >
@@ -71,12 +83,22 @@
 
           <div class="mobile-menu">
             <div class="mobile-menu-icon">
-              <img src="img/icon/menu.svg">
+              <img src="img/icon/menu.svg" />
             </div>
             <div class="mobile-menu-wrapper hide">
               <button type="button" class="btn btn-close-menu">
-                <svg class="btn-close-modal__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="white"/>
+                <svg
+                  class="btn-close-modal__icon"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
+                    fill="white"
+                  />
                 </svg>
               </button>
             </div>
@@ -140,21 +162,23 @@
                 >минимум 4 человека</label
               >
             </div>
-            <button class="btn btn-light" type="button">Найти программу</button>
+            <button class="btn btn--light" type="button">
+              Найти программу
+            </button>
           </form>
         </div>
       </div>
     </header>
 
     <main>
-      <div class="wrapper">
-        <section class="about-block section">
+      <section class="about-block section">
+        <div class="wrapper about-block-wrapper">
           <div class="video-block">
             <img src="img\video-2.jpg" class="video-block__under-img" />
             <div class="video-block__preview">
               <img src="img/video-1.jpg" class="video-block__preview-img" />
               <button
-                class="btn btn-dark btn-open-modal video-block__play-video"
+                class="btn btn--dark btn-open-modal video-block__play-video"
                 type="button"
                 data-type-content="video"
                 data-video-code="BTMjD7_evjE?si=wLarWqXCdjrObHQL"
@@ -177,11 +201,13 @@
               самых странных слов в Lorem Ipsum, "consectetur"и занялся его
               поисками в классической латинской литературе.
             </p>
-            <button class="btn btn-dark btn-dark--big">Программа тура</button>
+            <button class="btn btn--dark btn--big">Программа тура</button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="our-offer section">
+      <section class="our-offer section">
+        <div class="wrapper our-offer-wrapper">
           <div class="our-offer-description">
             <div class="our-offer__subtitle section__subtitle">
               наше предложение
@@ -258,7 +284,7 @@
               </div>
             </div>
 
-            <button class="btn btn-dark btn-dark--big">Программа тура</button>
+            <button class="btn btn--dark btn--big">Программа тура</button>
           </div>
 
           <div class="our-offer-gallery">
@@ -283,28 +309,39 @@
               class="our-offer-gallery__img"
             />
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="popular-directions">
-          <div class="popular-direction__subtitle section__subtitle section__subtitle--center">
+      <section class="popular-directions section">
+        <div class="wrapper popular-directions-wrapper">
+          <div
+            class="popular-direction__subtitle section__subtitle section__subtitle--center"
+          >
             по версии отдыхающих
           </div>
-          <h2 class="popular-direction__heading-h2 section__heading-h2 section__heading-h2--center">
+          <h2
+            class="popular-direction__heading-h2 section__heading-h2 section__heading-h2--center"
+          >
             Популярные направления
           </h2>
-          <div class="swiper popular-direction">
+          <div class="swiper popular-direction-slider">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="popular-directions__item direction">
                   <img src="img/popular-1.png" alt="" class="direction__img" />
                   <div class="direction-rating">
-                    <img src="img/icon/star.svg" class="direction-rating__icon"> 
+                    <img
+                      src="img/icon/star.svg"
+                      class="direction-rating__icon"
+                    />
                     <span class="direction-rating__value">4.9</span>
                   </div>
                   <div class="direction-desc">
                     <div class="direction-desc__text">
                       <div class="direction-name">Озеро возле гор</div>
-                      <div class="direction-label">романтическое приключение</div>
+                      <div class="direction-label">
+                        романтическое приключение
+                      </div>
                     </div>
                     <div class="direction-cost">480 $</div>
                   </div>
@@ -315,7 +352,10 @@
                 <div class="popular-directions__item direction">
                   <img src="img/popular-2.png" alt="" class="direction__img" />
                   <div class="direction-rating">
-                    <img src="img/icon/star.svg" class="direction-rating__icon"> 
+                    <img
+                      src="img/icon/star.svg"
+                      class="direction-rating__icon"
+                    />
                     <span class="direction-rating__value">4.5</span>
                   </div>
                   <div class="direction-desc">
@@ -328,18 +368,22 @@
                 </div>
               </div>
 
-
               <div class="swiper-slide">
                 <div class="popular-directions__item direction">
                   <img src="img/popular-3.png" alt="" class="direction__img" />
                   <div class="direction-rating">
-                    <img src="img/icon/star.svg" class="direction-rating__icon"> 
+                    <img
+                      src="img/icon/star.svg"
+                      class="direction-rating__icon"
+                    />
                     <span class="direction-rating__value">5</span>
                   </div>
                   <div class="direction-desc">
                     <div class="direction-desc__text">
                       <div class="direction-name">Йога в горах</div>
-                      <div class="direction-label">для тех, кто забоится о себе</div>
+                      <div class="direction-label">
+                        для тех, кто забоится о себе
+                      </div>
                     </div>
                     <div class="direction-cost">230 $</div>
                   </div>
@@ -350,32 +394,142 @@
                 <div class="popular-directions__item direction">
                   <img src="img/popular-1.png" alt="" class="direction__img" />
                   <div class="direction-rating">
-                    <img src="img/icon/star.svg" class="direction-rating__icon"> 
+                    <img
+                      src="img/icon/star.svg"
+                      class="direction-rating__icon"
+                    />
                     <span class="direction-rating__value">4.9</span>
                   </div>
                   <div class="direction-desc">
                     <div class="direction-desc__text">
                       <div class="direction-name">Озеро возле гор</div>
-                      <div class="direction-label">романтическое приключение</div>
+                      <div class="direction-label">
+                        романтическое приключение
+                      </div>
                     </div>
                     <div class="direction-cost">480 $</div>
                   </div>
                 </div>
               </div>
-
-            </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section class="blogs section">
+        <div class="wrapper blogs-wraaper">
+          <div
+            class="blog__subtitle section__subtitle section__subtitle--center"
+          >
+            делимся впечатлениями
+          </div>
+          <h2
+            class="blog-direction__heading-h2 section__heading-h2 section__heading-h2--center"
+          >
+            Блог о путешествиях
+          </h2>
+          <div class="blog-slider">
+            <div class="blog-wrapper">
+              <div class="blog-item">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/blog-1.jpg" class="blog-item__img" />
+                  <img src="img/blog-1-2.jpg" class="blog-item__img" />
+                </picture>
+                <div class="blog-item__content">
+                  <h3 class="blog-item__heading">
+                    Красивая Италия, какая она в реальности?
+                  </h3>
+                  <p class="blog-item__desc">
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </p>
+                  <div class="blog-item__footer">
+                    <span class="blog-item__date">01/04/2023</span>
+                    <a href="#" class="blog-item__link">читать статью</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-item">
+                <picture>
+                  <source media="(min-width: 1024px)" srcset="img/blog-2.jpg" />
+                  <img src="img/blog-2.jpg" class="blog-item__img" />
+                </picture>
+                <div class="blog-item__content">
+                  <h3 class="blog-item__heading">
+                    Долой сомнения! Весь мир открыт для вас!
+                  </h3>
+                  <p class="blog-item__desc">
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </p>
+                  <div class="blog-item__footer">
+                    <span class="blog-item__date">01/04/2023</span>
+                    <a href="#" class="blog-item__link">читать статью</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-item">
+                <img src="img/blog-3.jpg" class="blog-item__img" />
+                <div class="blog-item__content">
+                  <h3 class="blog-item__heading">
+                    Как подготовиться к путешествию в одиночку?
+                  </h3>
+                  <p class="blog-item__desc">
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </p>
+                  <div class="blog-item__footer">
+                    <span class="blog-item__date">01/04/2023</span>
+                    <a href="#" class="blog-item__link">читать статью</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-item">
+                <img src="img/blog-4.jpg" class="blog-item__img" />
+                <div class="blog-item__content">
+                  <h3 class="blog-item__heading">Индия ... летим?</h3>
+                  <p class="blog-item__desc">
+                    Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.
+                  </p>
+                  <div class="blog-item__footer">
+                    <span class="blog-item__date">01/04/2023</span>
+                    <a href="#" class="blog-item__link">читать статью</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn--dark btn---big btn--center">
+            Программа тура
+          </button>
+        </div>
+      </section>
     </main>
 
     <footer>
       <div class="popup hide">
         <div class="popup-wrapper">
           <button type="button" class="btn-close-modal">
-            <svg class="btn-close-modal__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="white"/>
+            <svg
+              class="btn-close-modal__icon"
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
+                fill="white"
+              />
             </svg>
           </button>
           <div class="popup-content"></div>
