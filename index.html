@@ -188,9 +188,9 @@
             </div>
           </div>
           <div class="about-description">
-            <div class="about-description__subtitle section__subtitle">
+            <p class="about-description__subtitle section__subtitle">
               о нашем походе
-            </div>
+            </p>
             <h2 class="about-description__heading section__heading-h2">
               Исследуйте все горные массивы мира вместе с нами
             </h2>
@@ -209,9 +209,9 @@
       <section class="our-offer section">
         <div class="wrapper our-offer-wrapper">
           <div class="our-offer-description">
-            <div class="our-offer__subtitle section__subtitle">
+            <p class="our-offer__subtitle section__subtitle">
               наше предложение
-            </div>
+            </p>
             <h2 class="our-offer__heading section__heading-h2">
               Лучшие программы для тебя
             </h2>
@@ -314,11 +314,11 @@
 
       <section class="popular-directions section">
         <div class="wrapper popular-directions-wrapper">
-          <div
+          <p
             class="popular-direction__subtitle section__subtitle section__subtitle--center"
           >
             по версии отдыхающих
-          </div>
+          </p>
           <h2
             class="popular-direction__heading-h2 section__heading-h2 section__heading-h2--center"
           >
@@ -417,12 +417,10 @@
       </section>
 
       <section class="blogs section">
-        <div class="wrapper blogs-wraaper">
-          <div
-            class="blog__subtitle section__subtitle section__subtitle--center"
-          >
+        <div class="wrapper blogs-wrapper">
+          <p class="blog__subtitle section__subtitle section__subtitle--center">
             делимся впечатлениями
-          </div>
+          </p>
           <h2
             class="blog-direction__heading-h2 section__heading-h2 section__heading-h2--center"
           >
@@ -432,7 +430,11 @@
             <div class="blog-wrapper">
               <div class="blog-item">
                 <picture>
-                  <source media="(min-width: 1024px)" srcset="img/blog-1.jpg" class="blog-item__img" />
+                  <source
+                    media="(min-width: 1024px)"
+                    srcset="img/blog-1.jpg"
+                    class="blog-item__img"
+                  />
                   <img src="img/blog-1-2.jpg" class="blog-item__img" />
                 </picture>
                 <div class="blog-item__content">
@@ -453,12 +455,16 @@
 
               <div class="blog-item">
                 <picture>
-                  <source media="(min-width: 1024px)" srcset="img/blog-2.jpg" />
-                  <img src="img/blog-2.jpg" class="blog-item__img" />
+                  <source
+                    media="(min-width: 1024px)"
+                    srcset="img/blog-2.jpg"
+                    class="blog-item__img"
+                  />
+                  <img src="img/blog-2-2.jpg" class="blog-item__img" />
                 </picture>
                 <div class="blog-item__content">
                   <h3 class="blog-item__heading">
-                    Долой сомнения! Весь мир открыт для вас!
+                    Красивая Италия, какая она в реальности?
                   </h3>
                   <p class="blog-item__desc">
                     Для современного мира базовый вектор развития предполагает
@@ -473,7 +479,14 @@
               </div>
 
               <div class="blog-item">
-                <img src="img/blog-3.jpg" class="blog-item__img" />
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcset="img/blog-3.jpg"
+                    class="blog-item__img"
+                  />
+                  <img src="img/blog-3-2.jpg" class="blog-item__img" />
+                </picture>
                 <div class="blog-item__content">
                   <h3 class="blog-item__heading">
                     Как подготовиться к путешествию в одиночку?
@@ -491,7 +504,14 @@
               </div>
 
               <div class="blog-item">
-                <img src="img/blog-4.jpg" class="blog-item__img" />
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcset="img/blog-4.jpg"
+                    class="blog-item__img"
+                  />
+                  <img src="img/blog-4-2.jpg" class="blog-item__img" />
+                </picture>
                 <div class="blog-item__content">
                   <h3 class="blog-item__heading">Индия ... летим?</h3>
                   <p class="blog-item__desc">
@@ -508,8 +528,52 @@
             </div>
           </div>
           <button class="btn btn--dark btn---big btn--center">
-            Программа тура
+            Другие материалы
           </button>
+        </div>
+      </section>
+
+      <section class="photo-reports section">
+        <div class="wrapper photo-reports-wrapper">
+          <p
+            class="photo-reports__subtitle section__subtitle section__subtitle--center"
+          >
+            фото-отчет
+          </p>
+          <h2
+            class="photo-reports__heading-h2 section__heading-h2 section__heading-h2--center"
+          >
+            Делитесь впечатлениями
+          </h2>
+
+          <div class="photo-gallery">
+            <div class="photo-gallery-wrapper">
+              <div class="photo-gallery__item">
+                <img
+                  src="img/photo-1.jpg"
+                  class="photo-gallery__img photo-gallery__img--big"
+                />
+              </div>
+              <div class="photo-gallery__item">
+                <img src="img/photo-2.jpg" class="photo-gallery__img" />
+              </div>
+              <div class="photo-gallery__item">
+                <img src="img/photo-3.jpg" class="photo-gallery__img" />
+              </div>
+              <div class="photo-gallery__item">
+                <img src="img/photo-4.jpg" class="photo-gallery__img" />
+              </div>
+              <div class="photo-gallery__item">
+                <img
+                  src="img/photo-5.jpg"
+                  class="photo-gallery__img photo-gallery__img--big"
+                />
+              </div>
+              <div class="photo-gallery__item">
+                <img src="img/photo-6.jpg" class="photo-gallery__img" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -535,6 +599,8 @@
           <div class="popup-content"></div>
         </div>
       </div>
+
+      <div class="popup-photo hide"></div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
