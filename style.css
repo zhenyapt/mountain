@@ -299,12 +299,6 @@ body {
   margin-bottom: 40px;
 }
 
-@media screen and (max-width: 1024px) {
-  .main-heading {
-    font-size: 1.5em;
-  }
-}
-
 .select-tour {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 40px;
@@ -727,6 +721,24 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .main-heading {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+  .section__heading-h2 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .section__heading-h2--center {
+    text-align: left;
+  }
+  .section__subtitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .section__subtitle--center {
+    text-align: left;
+  }
   .main-nav,
   .video-block__under-img,
   .our-offer-gallery,
