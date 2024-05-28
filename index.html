@@ -574,11 +574,45 @@
               </div>
             </div>
           </div>
+
+          <button class="btn btn--dark btn---big btn--center" type="button">
+            Наш pinterest
+          </button>
         </div>
       </section>
+
+      <div class="wrapper subscribe">
+        <div class="subscribe-desc">
+          <p class="subscribe__subtitle">актуально</p>
+          <h2 class="subscribe__heading-h2">
+            Получайте полезные рассылки о путешествиях
+          </h2>
+        </div>
+        <form class="subscribe-form" autocomplete="off">
+          <div class="subscribe-form__input-wrapper">
+            <label for="email-input" class="subscribe-form__label"
+              >Введите e-mail адрес
+              <input
+                type="text"
+                class="form-input subscribe-form__input"
+                id="email-input"
+                placeholder="name@domain.com"
+              />
+            </label>
+            <button class="btn btn--dark btn---big btn--center" type="submit">
+              Подписаться на новости
+            </button>
+          </div>
+          <p class="subcribe-form__desc form-desc">
+            подписываясь на новости, вы автоматически соглашаетесь с условиями
+            <a href="#" class="link">обработки персональных данных</a> и
+            <a href="#" class="link">правилами рекламных рассылок</a>
+          </p>
+        </form>
+      </div>
     </main>
 
-    <footer>
+    <footer class="footer">
       <div class="popup hide">
         <div class="popup-wrapper">
           <button type="button" class="btn-close-modal">
@@ -604,6 +638,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
     <script src="script.js"></script>
   </body>
 </html>
