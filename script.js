@@ -36,7 +36,7 @@ function createModalcontent(button) {
     modalContentHTML = `<h2 class="form__heading">Заказать консультацию</h2> <form class="form-consultation form"> 
     <input type="text" class="form-name form-input" placeholder="Ваше имя"/> 
     <input type="tel" class="form-tel form-input" id="form-input-tel" placeholder="Ваш телефон" /> 
-    <button class="btn btn--dark btn-form" type="button"> Отправить </button> </form>`;
+    <button class="btn btn--dark btn-form" type="submit"> Отправить </button> </form>`;
 
     modalContent.innerHTML = modalContentHTML;
 
@@ -86,6 +86,10 @@ function handlerPopupForm() {
   btnCurrentPopupForm.addEventListener('click', showSuccessMessage);
 
   //проверка формы -- нужно написать
+  let elementsForm = currentPopupForm.elements;
+  for (let elementForm of elementsForm) {
+    console.log(elementForm);
+  }
   //отправка формы -- нужно написать
   //показ сообщения - об успешности отправки (нужен результат проверок)
 }

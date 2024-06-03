@@ -132,6 +132,7 @@ table {
 
 :root {
   --main-dark-color: #1a3e3e;
+  --additional-dark-font: #18121e;
   --main-light-color: #fff;
   --main-light-transparent-color: rgba(255, 255, 255, 0.8);
   --bright-color: #f2be22;
@@ -847,6 +848,21 @@ body {
   padding-top: 178px;
 }
 
+.footer-bottom {
+  background-color: var(--additional-dark-font);
+}
+.footer-bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0px;
+  color: var(--main-light-color);
+  font-weight: 500;
+}
+
+.link-policy {
+  color: inherit;
+  text-decoration: none;
+}
 @media screen and (max-width: 1200px) {
   .wrapper {
     width: calc(100% - 20px);
@@ -935,5 +951,15 @@ body {
   .subscribe,
   .subscribe-form__input-wrapper {
     flex-direction: column;
+  }
+
+  .footer-bottom-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-company {
+    margin-bottom: 8px;
   }
 }
