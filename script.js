@@ -220,3 +220,19 @@ if (window.innerWidth <= 1024) {
     },
   });
 }
+
+let cookie = document.querySelector('.cookie');
+let cookieOk = document.querySelector('.cookie-ok');
+
+if (window.localStorage.getItem('cookie') == 'yes') {
+  cookie.classList.remove('cookie-animation');
+  cookie.classList.add('hide');
+}
+
+cookieOk.addEventListener('click', closeCookie);
+
+function closeCookie() {
+  cookie.classList.add('hide');
+  window.localStorage.setItem('cookie', 'yes');
+  cookieOk.removeEventListener('click', closeCookie);
+}
