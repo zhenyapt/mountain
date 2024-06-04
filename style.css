@@ -171,7 +171,6 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0px 10px;
 }
 
 .header {
@@ -504,7 +503,9 @@ body {
 }
 
 .video-block__preview-img {
+  box-sizing: border-box;
   border-radius: 24px;
+  max-width: 100%;
 }
 
 .video-block__preview {
@@ -528,6 +529,7 @@ body {
 .our-offer {
   padding-top: 80px;
   padding-bottom: 80px;
+  background-color: var(--bg-color);
 }
 
 .our-offer-wrapper {
@@ -670,12 +672,14 @@ body {
     flex-wrap: wrap;
     gap: 20px;
   }
+
   .blog-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
   }
 }
+
 .blog-item {
   display: flex;
   gap: 24px;
@@ -800,9 +804,6 @@ body {
   padding: 40px 100px;
   border-radius: 6px;
   box-shadow: 0px 0px 15px 0px var(--box-shadow-color);
-}
-
-.subscribe-desc {
 }
 
 .subscribe__subtitle {
@@ -1014,8 +1015,22 @@ body {
   .select-tour {
     display: none;
   }
+
+  .about-block {
+    padding: 50px 0px;
+  }
+
+  .about-description {
+    padding: 0px 0px 40px;
+  }
+
   .about-block-wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .about-block__btn {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .our-offer-description,
@@ -1027,6 +1042,7 @@ body {
   .mobile-menu {
     display: block;
   }
+
   .nav-list__item::before {
     position: absolute;
     left: 0px;

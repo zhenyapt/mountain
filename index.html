@@ -176,7 +176,10 @@
           <div class="video-block">
             <img src="img\video-2.jpg" class="video-block__under-img" />
             <div class="video-block__preview">
-              <img src="img/video-1.jpg" class="video-block__preview-img" />
+              <picture class="video-block__preview-img">
+                <source srcset="img/video-1.jpg" media="(min-width: 600px)" />
+                <img src="img/video-1-mobile.jpg" />
+              </picture>
               <button
                 class="btn btn--dark btn-open-modal video-block__play-video"
                 type="button"
@@ -201,7 +204,7 @@
               самых странных слов в Lorem Ipsum, "consectetur"и занялся его
               поисками в классической латинской литературе.
             </p>
-            <button class="btn btn--dark btn--big">Программа тура</button>
+            <button class="btn btn--dark btn--big about-block__btn">Программа тура</button>
           </div>
         </div>
       </section>
