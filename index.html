@@ -19,30 +19,35 @@
     />
   </head>
   <body>
-    <div class="about-project">
-      <div class="wrapper">
-        <p class="about-project__text">
-          тестовая верстка главной страницы многостраничного сайта, назначение
-          проекта - практика навыков верстки и написания js-скриптов
-        </p>
-        <p class="about-project__text">
-          по макету -
-          <a
-            rel="nofollow"
-            href="https://www.figma.com/design/NrPZZU8u1sLytOicIHcIAx/%D0%A0%D1%83%D0%BC%D0%A2%D0%B8%D0%B1%D0%B5%D1%82?node-id=1-9&t=lEwrmlnguMcIrtyP-0"
-            class="about-project__link"
-          >
-            Румтибет</a
-          >, автор макета
-          <a
-            rel="nofollow"
-            href="https://avanesov.pro/portfolio/rumtibet/"
-            class="about-project__link"
-          >
-            https://avanesov.pro/portfolio/rumtibet/</a
-          >
-          + реализация попапов с формами, видео
-        </p>
+    <div class="about-project info-bar about-project-animation hide">
+      <div class="wrapper about-project-wrapper">
+        <div class="about-project__desc">
+          <p class="about-project__text">
+            тестовая верстка главной страницы многостраничного сайта, назначение
+            проекта - практика навыков верстки и написания <span class="nowrap">js-скриптов</span>
+          </p>
+          <p class="about-project__text">
+            по макету -
+            <a
+              rel="nofollow"
+              href="https://www.figma.com/design/NrPZZU8u1sLytOicIHcIAx/%D0%A0%D1%83%D0%BC%D0%A2%D0%B8%D0%B1%D0%B5%D1%82?node-id=1-9&t=lEwrmlnguMcIrtyP-0"
+              class="about-project__link"
+            >
+              Румтибет</a
+            >, автор макета
+            <a
+              rel="nofollow"
+              href="https://avanesov.pro/portfolio/rumtibet/"
+              class="about-project__link"
+            >
+              https://avanesov.pro/portfolio/rumtibet/</a
+            >
+            + реализация попапов с формами, видео
+          </p>
+        </div>
+        <button class="btn btn-ok btn--animation-dark">
+          Ок
+        </button>
       </div>
     </div>
     <header class="header header-main-page">
@@ -593,12 +598,14 @@
         </div>
         <form class="subscribe-form" autocomplete="off">
           <div class="subscribe-form__input-wrapper">
-            <label for="email-input" class="subscribe-form__label"
+            <label for="email-input" class=" form-label subscribe-form__label"
               >Введите e-mail адрес
               <input
                 type="text"
                 class="form-input subscribe-form__input"
                 id="email-input"
+                data-required="required"
+                data-name="почта"
                 placeholder="name@domain.com"
               />
             </label>
@@ -719,11 +726,11 @@
 
       <div class="popup-photo hide"></div>
 
-      <div class="cookie cookie-animation">
+      <div class="cookie cookie-animation info-bar hide">
         <div class="wrapper cookie-wrapper">
           <p class="cookie__text">Мы используем куки для аналитики </p>
    
-        <button class="btn btn--dark cookie-ok">
+        <button class="btn btn--dark btn-ok">
           Ок
         </button>
         </div>

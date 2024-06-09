@@ -13,6 +13,9 @@ let mobileMenu = document.querySelector('.mobile-menu');
 let mobileMenuWrapper = document.querySelector('.mobile-menu-wrapper');
 let btnCloseMenu = document.querySelector('.btn-close-menu');
 
+let subscribeForm = document.querySelector('.subscribe-form');
+subscribeForm.addEventListener('submit', validateForm);
+
 mobileMenuIcon.addEventListener('click', function (event) {
   mobileMenuWrapper.classList.remove('hide');
   mainMenu.classList.add('nav-list--mobile');
@@ -34,8 +37,8 @@ function createModalcontent(button) {
 
   if (btnType == 'form') {
     modalContentHTML = `<h2 class="form__heading">Заказать консультацию</h2> <form class="form-consultation form"> 
-    <input type="text" class="form-name form-input" placeholder="Ваше имя"/> 
-    <input type="tel" class="form-tel form-input" id="form-input-tel" placeholder="Ваш телефон" /> 
+    <label class="form-label"><input type="text" name="name" class="form-name form-input" data-required = "required" data-name = "имя" placeholder="Ваше имя"/></label> 
+    <label class="form-label"><input type="tel" name="tel" class="form-tel form-input" data-required = "required" data-name = "телефон" id="form-input-tel" placeholder="Ваш телефон" /></label> 
     <button class="btn btn--dark btn-form" type="submit"> Отправить </button> </form>`;
 
     modalContent.innerHTML = modalContentHTML;
@@ -54,14 +57,13 @@ function attachModalEvents() {
 }
 
 function handleOutside(event) {
-  const isClickOutside = !!event.target.closest('.popup-wrapper');
+  const isClickOutside = event.target.closest('.popup-wrapper');
   if (!isClickOutside) {
     closeModal();
   }
 }
 
-function closeModal(event) {
-  event.stopPropagation();
+function closeModal() {
   modal.classList.add('hide');
   modal.removeEventListener('click', handleOutside);
   btnClose.removeEventListener('click', closeModal);
@@ -80,18 +82,50 @@ function handlerPopupForm() {
   if (telephoneCurentPopupForm) {
     setMaskTel(telephoneCurentPopupForm);
   }
-  // добавление обработчика кнопке отправки формы -- нужно написать
-  let btnCurrentPopupForm = currentPopupForm.querySelector('.btn-form');
+  currentPopupForm.addEventListener('submit', validateForm);
+}
 
-  btnCurrentPopupForm.addEventListener('click', showSuccessMessage);
+function validateForm(event) {
+  event.preventDefault();
+  let formIsValid = true;
+  let currentForm = event.target;
+  let messagesError = currentForm.querySelectorAll('.form-error-message');
 
-  //проверка формы -- нужно написать
-  let elementsForm = currentPopupForm.elements;
-  for (let elementForm of elementsForm) {
-    console.log(elementForm);
+  if (messagesError) {
+    messagesError.forEach((message) => {
+      message.remove();
+    });
   }
-  //отправка формы -- нужно написать
-  //показ сообщения - об успешности отправки (нужен результат проверок)
+
+  let formElements = Array.from(currentForm);
+
+  formElements.forEach((element) => {
+    if (element.dataset.required && !element.value) {
+      formIsValid = false;
+      element.classList.add('form-input--error');
+      let message;
+      message = document.createElement('span');
+      message.textContent = `Поле ${element.dataset.name} обязательно`;
+      message.classList.add('form-error-message');
+      element.closest('.form-label').insertBefore(message, element);
+    }
+    if (
+      element.dataset.required &&
+      element.value &&
+      element.classList.contains('form-input--error')
+    ) {
+      element.classList.remove('form-input--error');
+    }
+  });
+
+  if (formIsValid) {
+    //submit form - нужна отправка на сервер и проверка ответа от сервера
+
+    if (currentForm.closest('.popup')) {
+      modalContentHTML = `<h2 class="form__heading">Форма успешно отправлена</h2> <p>Мы перезвоним Вам в ближайщее время</p>`;
+      modalContent.innerHTML = modalContentHTML;
+    }
+  }
 }
 
 function setMaskTel(telephoneCurentPopupForm) {
@@ -99,12 +133,6 @@ function setMaskTel(telephoneCurentPopupForm) {
     mask: '+{7}(000)000-00-00',
   };
   let mask = IMask(telephoneCurentPopupForm, maskOptions);
-}
-
-function showSuccessMessage(event) {
-  event.stopPropagation();
-  modalContentHTML = `<h2 class="form__heading">Форма успешно отправлена</h2> <p>Мы перезвоним Вам в ближайщее время</p>`;
-  modalContent.innerHTML = modalContentHTML;
 }
 
 const swiperDirection = new Swiper('.popular-direction-slider', {
@@ -222,17 +250,36 @@ if (window.innerWidth <= 1024) {
 }
 
 let cookie = document.querySelector('.cookie');
-let cookieOk = document.querySelector('.cookie-ok');
+let aboutProject = document.querySelector('.about-project');
+let btnsOk = document.querySelectorAll('.btn-ok');
+
+if (window.localStorage.getItem('cookie') != 'yes') {
+  cookie.classList.remove('hide');
+}
 
 if (window.localStorage.getItem('cookie') == 'yes') {
   cookie.classList.remove('cookie-animation');
   cookie.classList.add('hide');
 }
 
-cookieOk.addEventListener('click', closeCookie);
+if (window.localStorage.getItem('about-project') != 'yes') {
+  aboutProject.classList.remove('hide');
+}
 
-function closeCookie() {
-  cookie.classList.add('hide');
-  window.localStorage.setItem('cookie', 'yes');
-  cookieOk.removeEventListener('click', closeCookie);
+if (window.localStorage.getItem('about-project') == 'yes') {
+  aboutProject.classList.add('hide');
+}
+
+for (let btnOk of btnsOk) {
+  btnOk.addEventListener('click', closeInfoBar);
+}
+
+function closeInfoBar(event) {
+  let parent = event.target.closest('.info-bar');
+  parent.classList.add('hide');
+  if (parent.classList.contains('cookie')) {
+    window.localStorage.setItem('cookie', 'yes');
+  } else if (parent.classList.contains('about-project')) {
+    window.localStorage.setItem('about-project', 'yes');
+  }
 }

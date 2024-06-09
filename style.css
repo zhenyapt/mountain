@@ -137,6 +137,8 @@ table {
   --main-light-transparent-color: rgba(255, 255, 255, 0.8);
   --bright-color: #f2be22;
   --bg-color: #f3f5f4;
+  --error-color: #ed143d;
+
   --box-shadow-color: rgba(24, 18, 30, 0.12);
 
   --main-font: 'Nunito Sans';
@@ -148,11 +150,93 @@ body {
   font-size: 18px;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .about-project {
   background-color: var(--main-dark-color);
-  padding: 20px 0px;
   line-height: 1.5;
   color: var(--main-light-color);
+}
+
+.about-project-animation {
+  opacity: 0px;
+  animation-name: appearance-about-block;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appearance-about-block {
+  from {
+    opacity: 0;
+    height: 0px;
+    background-color: var(--main-light-color);
+    padding: 0px;
+    font-size: 0px;
+  }
+  50% {
+    opacity: 0.5;
+    height: auto;
+    background-color: var(--main-dark-color);
+    padding: 20px 0px;
+    font-size: 14px;
+  }
+  to {
+    opacity: 1;
+    height: auto;
+    background-color: var(--main-dark-color);
+    padding: 20px 0px;
+    font-size: 14px;
+  }
+}
+
+.btn--animation-dark {
+  opacity: 0;
+  box-sizing: border-box;
+  animation-name: appearance-btn;
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  border: 1px solid var(--main-light-color);
+  background-color: var(--main-dark-color);
+  color: var(--main-light-color);
+}
+
+@keyframes appearance-btn {
+  from {
+    height: 0px;
+    padding: 0px;
+    font-size: 0px;
+    line-height: 0px;
+    opacity: 0;
+  }
+  75% {
+    height: 46px;
+    padding: 0px;
+    font-size: 0px;
+    line-height: 0px;
+    opacity: 1;
+  }
+  to {
+    height: 46px;
+    padding: 12px 24px 12px 24px;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 1;
+  }
+}
+
+.btn--animation-dark:hover {
+  background-color: var(--main-light-color) !important;
+  color: var(--main-dark-color) !important;
+}
+
+.about-project-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 }
 
 .about-project__link {
@@ -414,7 +498,7 @@ body {
 .form-consultation {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .form__heading {
@@ -427,14 +511,27 @@ body {
 .form-input {
   display: block;
   box-sizing: border-box;
-  max-width: 100%;
+  width: 100%;
   background: var(--bg-color);
-  border: none;
+  border: 1px solid var(--bg-color);
   border-radius: 4px;
   line-height: 20px;
   font-size: 14px;
   padding: 12px 16px;
 }
+.form-input--error {
+  border: 1px solid var(--error-color);
+}
+.form-label {
+  position: relative;
+}
+.form-error-message {
+  position: absolute;
+  top: -16px;
+  font-size: 12px;
+  color: var(--error-color);
+}
+
 .btn-form-consultation {
   width: 470px;
   max-width: 100%;
@@ -988,12 +1085,13 @@ body {
 }
 
 .cookie-animation {
-  animation-name: circle-to-square;
+  animation-name: appearance-cookie;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  animation-delay: 2s;
 }
 
-@keyframes circle-to-square {
+@keyframes appearance-cookie {
   from {
     height: 0px;
     background-color: var(--main-light-color);
@@ -1035,6 +1133,48 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
+  .about-project-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn--animation-dark {
+    opacity: 0;
+    box-sizing: border-box;
+    animation-name: appearance-btn-mobile;
+    animation-duration: 2s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    border: 1px solid var(--main-light-color);
+    background-color: var(--main-dark-color);
+    color: var(--main-light-color);
+  }
+  @keyframes appearance-btn-mobile {
+    from {
+      height: 0px;
+      padding: 0px;
+      font-size: 0px;
+      line-height: 0px;
+      width: 0px;
+      opacity: 0;
+    }
+    75% {
+      height: 36px;
+      padding: 12px 0px;
+      font-size: 0px;
+      line-height: 0px;
+      width: 0px;
+      opacity: 1;
+    }
+    to {
+      height: 36px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 12px;
+      width: 100%;
+      opacity: 1;
+    }
+  }
   .main-heading {
     font-size: 28px;
     line-height: 1.5;
