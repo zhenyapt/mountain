@@ -523,13 +523,12 @@ body {
   border: 1px solid var(--error-color);
 }
 .form-label {
-  position: relative;
 }
 .form-error-message {
-  position: absolute;
-  top: -16px;
   font-size: 12px;
+  line-height: 14px;
   color: var(--error-color);
+  display: block;
 }
 
 .btn-form-consultation {
@@ -922,13 +921,16 @@ body {
 }
 
 .subscribe-form__input {
-  margin-top: 8px;
   width: 280px;
 }
 
 .subscribe-form__label {
   font-size: 16px;
   line-height: 20px;
+}
+.subscribe-form__label-text {
+  margin-bottom: 8px;
+  display: block;
 }
 
 .form-desc {
@@ -974,7 +976,7 @@ body {
 }
 .footer-contacts {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   margin-bottom: 32px;
 }
 
@@ -1082,6 +1084,7 @@ body {
   bottom: 0px;
   z-index: 10000;
   width: 100%;
+  font-size: 0px;
 }
 
 .cookie-animation {
@@ -1093,21 +1096,27 @@ body {
 
 @keyframes appearance-cookie {
   from {
+    opacity: 0;
     height: 0px;
     background-color: var(--main-light-color);
     padding: 0px;
+    font-size: 0px;
     box-shadow: 0px 0px 0px 0px var(--main-light-color);
   }
-  75% {
+  50% {
+    opacity: 0.5;
     height: 40px;
     background-color: var(--bg-color);
     padding: 20px 0px;
+    font-size: 18px;
     box-shadow: 0px 0px 0px 0px var(--main-light-color);
   }
   to {
+    opacity: 1;
     height: 40px;
     background-color: var(--bg-color);
     padding: 20px 0px;
+    font-size: 18px;
     box-shadow: 0px -1px 10px 2px rgba(0, 0, 0, 0.1);
   }
 }
@@ -1149,6 +1158,18 @@ body {
     background-color: var(--main-dark-color);
     color: var(--main-light-color);
   }
+  .btn--animation-dark--delay {
+    opacity: 0;
+    box-sizing: border-box;
+    animation-name: appearance-btn-mobile;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: transparent;
+  }
+
   @keyframes appearance-btn-mobile {
     from {
       height: 0px;
