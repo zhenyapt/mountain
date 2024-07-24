@@ -69,15 +69,20 @@ body {
 }
 
 .btn--animation-dark {
+  height: 0px;
   opacity: 0;
   box-sizing: border-box;
   animation-name: appearance-btn;
   animation-duration: 2s;
-  animation-delay: 0.3s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
   border: 1px solid var(--main-light-color);
   background-color: var(--main-dark-color);
   color: var(--main-light-color);
+}
+
+.cookie .btn--animation-dark {
+  animation-delay: 10s;
 }
 
 @keyframes appearance-btn {
@@ -968,7 +973,7 @@ body {
   animation-name: appearance-cookie;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 9.5s;
 }
 
 @keyframes appearance-cookie {
